@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+</head>
+<body>
+    <button id="user_register">测试注册接口  http://127.0.0.1:3000/users/register</button>
+    <button id="user_login">测试登录接口  http://127.0.0.1:3000/users/login</button>
+
+    <script>
+     $(function(){
+        $("#user_register").click(function(){
+            $.post("http://127.0.0.1:3000/users/register",{
+                username:"cc",  
+                password:"123456",
+                userMail:"1425717351@qq.com",
+                userPhone:"18502789940  "
+            },function(res){
+                console.log(res);
+                
+            })
+        })
+        $("#user_login").click(function(){
+            $.post("http://127.0.0.1:3000/users/login",{
+                username:"cc",
+                password:"123456",
+            },function(res){
+                console.log(res);
+                
+            })
+        })
+
+   
+       
+     })    
+    </script>
+</body>
+</html>
